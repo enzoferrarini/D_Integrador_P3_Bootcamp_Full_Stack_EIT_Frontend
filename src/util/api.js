@@ -1,7 +1,7 @@
 import axios from "axios";
 
-console.log("REACT_APP_BASE_URL_API:");
-console.log(process.env.REACT_APP_BASE_URL_API);
+// console.log("REACT_APP_BASE_URL_API:");
+// console.log(process.env.REACT_APP_BASE_URL_API);
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL_API,
 });
@@ -39,7 +39,7 @@ export const getComments = async (body) => {
 };
 
 export const postCart = async (body) => {
-  console.log("Posting CART NEW");
+  // console.log("Posting CART NEW");
   const resp = await axiosInstance.post("/cart", { items: body });
   return resp.data;
 };
