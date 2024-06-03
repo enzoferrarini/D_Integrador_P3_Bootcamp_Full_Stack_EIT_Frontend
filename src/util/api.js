@@ -1,4 +1,5 @@
 import axios from "axios";
+import {transformNumberToDB} from "../util/validations.js"
 
 // console.log("REACT_APP_BASE_URL_API:");
 // console.log(process.env.REACT_APP_BASE_URL_API);
@@ -18,7 +19,7 @@ export const getProducts = async (searchValue = "") => {
 export const postProducts = async (body) => {
   const formData = new FormData();
   Object.entries(body).forEach(([key, value]) => {
-    formData.append(key, value);
+    key==="price"? formData.append(key, transformNumberToDB(value)):formData.append(key, value);
   });
   const resp = await axiosInstance.post("/products", formData, {
     headers: {
