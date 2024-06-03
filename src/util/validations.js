@@ -15,6 +15,11 @@ export const verificarCaracteresAlfabeticos = (cadena) => {
   return regex.test(cadena);
 };
 
+export const verificarCaracteresAlfabeticosNumericos = (cadena) => {
+  const regex = new RegExp("^[0-9a-zA-ZñÑ ]+$");
+  return regex.test(cadena);
+};
+
 //Función que verifica un valor entero (positivo negativo o cero)
 export const validarNumeroEntero = (cadena) => {
   const regex = new RegExp("^-?d+$");

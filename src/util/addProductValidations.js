@@ -10,7 +10,7 @@ export const validateName = (string) => {
   let msg = "";
   let valid = true;
   if (verificarNoVacio(string)) {
-    if (verificarCaracteresAlfabeticos(string)) {
+    if (verificarCaracteresAlfabeticosNumericos(string)) {
       if (validarLongitudCadena(string, 2, 30)) {
         msg = "";
         valid = true;
