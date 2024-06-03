@@ -50,6 +50,12 @@
   text-wrap: nowrap;
 }
 
+.text__animation {
+  padding: 5px;
+  text-wrap: nowrap;
+  animation: fade-animation 1s infinite;
+}
+
 .delivery {
   padding: 5px;
   color: variables.$success-color;

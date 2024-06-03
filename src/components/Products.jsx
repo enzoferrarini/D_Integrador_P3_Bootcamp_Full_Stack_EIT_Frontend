@@ -18,7 +18,8 @@ const Productos = () => {
       <div className="destacados">
         {loadingProducts ? (
           <div>
-            <h1>Cargando</h1>
+            <h1 className="text__animation">Cargando Productos</h1>
+            <h1 className="text__animation">Esta operación puede tardar algunos segundos...</h1>
           </div>
         ) : (
           <>
