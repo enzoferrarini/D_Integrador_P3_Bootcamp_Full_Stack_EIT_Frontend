@@ -1,6 +1,7 @@
 import {
   verificarNoVacio,
   verificarCaracteresAlfabeticos,
+  verificarCaracteresAlfabeticosNumericos,
   validarLongitudCadena,
   validarNumeroDecimal,
   validarNumeroEnteroPositivo,
