@@ -11,11 +11,11 @@ export const validateName = (string) => {
   let valid = true;
   if (verificarNoVacio(string)) {
     if (verificarCaracteresAlfabeticos(string)) {
-      if (validarLongitudCadena(string, 2, 20)) {
+      if (validarLongitudCadena(string, 2, 30)) {
         msg = "";
         valid = true;
       } else {
-        msg = "Mínimo 2 caracteres y Máximo 20";
+        msg = "Mínimo 2 caracteres y Máximo 30";
         valid = false;
       }
     } else {
@@ -111,11 +111,11 @@ export const validateDescCorta = (string) => {
   let msg = "";
   let valid = true;
   if (verificarNoVacio(string)) {
-    if (validarLongitudCadena(string, 2, 30)) {
+    if (validarLongitudCadena(string, 2, 35)) {
       msg = "";
       valid = true;
     } else {
-      msg = "Mínimo 2 caracteres y Máximo 30";
+      msg = "Mínimo 2 caracteres y Máximo 35";
       valid = false;
     }
   } else {
