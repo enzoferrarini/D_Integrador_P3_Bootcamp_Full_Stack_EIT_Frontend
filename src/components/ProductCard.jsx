@@ -33,8 +33,8 @@ const ProductCard = ({ p }) => {
         <div className="body__card">
           <p className="titulo__card">{p.name}</p>
           <p className="desc__card">
-            {p.shortDesc} <span className="badge__stock">stock: {p.stock}</span>
-            {p.delivery ? <span className="delivery">envío gratis</span> : null}
+            {p.shortDesc} <div className="badge__stock">stock: {p.stock}</div>
+            {p.delivery ? <div className="delivery">envío gratis</div> : null}
           </p>
           <p className="card__price">${transformNumberToFE(p.price)}</p>
         </div>
