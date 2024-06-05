@@ -66,9 +66,9 @@ const NavBar = () => {
               <FontAwesomeIcon icon={faBars} />
             </button>
             <div className="dropdown__content">
-              <a href="pages/addProduct.html">Alta de Productos</a>
-              <a href="pages/contact.html">Contacto</a>
-              <a href="pages/us.html">Nosotros</a>
+              <Link to="/addProduct">Alta de Productos</Link>
+              <Link to="/contact">Contacto</Link>
+              <Link to="/us">Nosotros</Link>
             </div>
           </div>
         </div>
