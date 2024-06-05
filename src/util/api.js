@@ -19,16 +19,6 @@ export const getProducts = async (searchValue = "") => {
 export const postProducts = async (body) => {
   const formData = new FormData();
   Object.entries(body).forEach(([key, value]) => {
-    if (key === "price") {
-      console.log("Key");
-      console.log(key);
-
-      console.log("Old Value");
-      console.log(value);
-      console.log("New Value");
-      console.log(transformNumberToDB(value));
-    }
-
     key === "price"
       ? formData.append(key, transformNumberToDB(value))
       : formData.append(key, value);
@@ -47,7 +37,8 @@ export const postComments = async (body) => {
 };
 
 export const getComments = async (body) => {
-  const resp = await axiosInstance.get("/comments", body);
+  const resp = await axiosInstance.get("/comments");
+  // console.log(resp.data);
   return resp.data;
 };
 

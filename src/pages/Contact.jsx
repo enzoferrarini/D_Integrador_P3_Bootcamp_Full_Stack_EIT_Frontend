@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FormLayout from "../layout/FormLayout";
 import { postComments } from "../util/api";
-
+import Comments from "../components/Comments";
+import { getComments } from "../util/api.js";
 import {
   validateName,
   validateMail,
@@ -15,6 +16,18 @@ const INITIAL_STATE = {
 };
 
 function Contact() {
+  const [commentsList, setCommentsList] = useState([]);
+
+  const fetchComments = () => {
+    getComments()
+      .then((data) => setCommentsList(data.comments))
+      .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
   const inputProps = {
     name: {
       inputLabel: "Nombre (*)",
@@ -41,10 +54,14 @@ function Contact() {
           title="Contacto"
           inputProps={inputProps}
           onSubmit={postComments}
+          callBack={fetchComments}
           labelSubmit="Enviar Comentarios"
           msgOK="Mensaje enviado correctamente..."
           initialState={INITIAL_STATE}
         />
+      </div>
+      <div className="form__container">
+        <Comments commentsList={commentsList} />
       </div>
     </section>
   );

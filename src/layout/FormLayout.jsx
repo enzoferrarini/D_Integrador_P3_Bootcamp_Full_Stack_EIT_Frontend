@@ -11,6 +11,7 @@ function FormLayout({
   onSubmit,
   labelSubmit,
   msgOK,
+  callBack,
 }) {
   const { values, handleInputChange, validateForm, resetForm, errors } =
     useForm(initialState);
@@ -29,6 +30,7 @@ function FormLayout({
             setLoadingForm(true);
             onSubmit(values)
               .then((data) => console.log(data))
+              .then (callBack)
               .catch((err) => console.error(err))
               .finally(() => {
                 openSticky(msgOK);
